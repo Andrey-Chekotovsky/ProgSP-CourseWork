@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+    implementation 'org.springframework.security:spring-security-core:6.1.5'
+    implementation project(':DbLayer')
+    implementation 'com.auth0:java-jwt:4.4.0'
+}
+test {
+    useJUnitPlatform()
+}
